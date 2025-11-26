@@ -1,0 +1,7 @@
+<app-greetings [recievedMessage] ="message()" />
+<!-- message() in '' wil shown as it is cause it will consider that as string and apart from '' it will look for js variables
+ to pass here because of [] around that recievedMessage -->
+<!-- if receivedMessage is used without [] everything consider as string passed here -->
+<p>home works!</p>
+
+<input type="text" (keyup) = "keyUpHandler($event)" >

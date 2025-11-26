@@ -1,0 +1,11 @@
+<h2>users list!</h2>
+<p *ngIf="users.length === 0">No users loaded. {{users.length}} </p>
+
+<ul>
+    <!-- <li *ngFor="let user of users">
+        {{ user.firstName }} {{ user.lastName }} ({{ user.email }})
+    </li> -->
+    <li *ngFor="let user of users">
+        {{ user.username }} {{ user.email }}
+    </li>
+</ul>
