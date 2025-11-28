@@ -1,11 +1,14 @@
 <!-- @for(todo of todoItems(); track $index){
     <p>{{ todo.title }}</p>
 } -->
+<!-- structural directive -->
+@if(todoItems().length === 0){
+    <p>loading...</p>
+}
+
+
 <ul class="todos">
     @for(todo of todoItems(); track todo.id){
-    <li class="todos__item">
-        <input type="checkbox" [value]="todo.completed" />
-        <h4>{{ todo.title }}</h4>
-    </li>
+        <app-todo-item (todoToggled) = "updateTodoItem($event)" [todo] = "todo" />
     }
 </ul>

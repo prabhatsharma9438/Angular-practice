@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { todo } from '../../model/todo';
+import { HighlightCompletedTodo } from '../../directives/highlight-completed-todo';
 
 @Component({
   selector: 'app-todo-item',
-  imports: [],
+  imports: [HighlightCompletedTodo],
   templateUrl: './todo-item.html',
   styleUrl: './todo-item.css'
 })
 export class TodoItem {
+  todo = input.required<todo>();
 
+  todoToggled = output<todo>();
+
+  todoClicked(){
+    this.todoToggled.emit( this.todo() );
+  }
 }
