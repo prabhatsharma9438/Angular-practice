@@ -4,5 +4,6 @@
         [checked]="todo().completed"
         (change) = "this.todoClicked()"
         />
-        <h4>{{ todo().title }}</h4>
+        <!-- predefined pipe of Angular (uppercase) -->
+        <h4>{{ todo().title | uppercase }}</h4>
     </li>
