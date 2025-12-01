@@ -1,5 +1,22 @@
-.todos{
+/*
+&__item is invalid, because:
+
+& can only be followed by selectors, not by a suffix
+
+&__item is treated like:
+“the parent selector + the suffix __item”
+
+Native CSS does NOT support parent-suffix concatenation
+*/
+/* .todos{
     &__item{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+} */
+ .todos {
+    .todos__item {
         display: flex;
         align-items: center;
         gap: 8px;
