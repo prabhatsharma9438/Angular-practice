@@ -1,1 +1,9 @@
-<p>todo-item works!</p>
+<li appHighlightCompletedTodo [isCompleted]="todo().completed" class="todos__item">
+        <input 
+        type="checkbox" 
+        [checked]="todo().completed"
+        (change) = "this.todoClicked()"
+        />
+        <!-- predefined pipe of Angular (uppercase) -->
+        <h4>{{ todo().title | uppercase }}</h4>
+    </li>
