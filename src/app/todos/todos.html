@@ -10,8 +10,12 @@
     <input name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search Todos..." />
 </form>
 
+@let filtered = (todoItems() | filterTodos : searchTerm());
+
+<p>results: {{filtered.length}}</p>
+
 <ul class="todos">
-    @for(todo of todoItems() | filterTodos : searchTerm(); track todo.id){
+    @for(todo of filtered; track todo.id){
     <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
     }
 </ul>
